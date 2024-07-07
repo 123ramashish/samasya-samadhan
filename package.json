@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "nestify-backend": "^2.1.0"
+  }
+}
