@@ -23,3 +23,91 @@ HOW TO USE : Run commands
 cd backend
 npm install
 npm run dev
+
+# Samasya-Samadhan 🌍
+
+Samasya-Samadhan is an initiative focused on addressing environmental issues and promoting sustainable practices. This platform connects individuals and communities with opportunities to participate in environmental clean-ups, river restoration, farming, and planting activities. Additionally, users can stay informed through the latest news and startup ideas related to sustainability and environmental innovation.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- 🌱 **Environment Cleanup**: Join or organize local cleanup drives to help restore and maintain a healthy environment.
+- 🌊 **River Cleanup**: Participate in river restoration projects to remove pollutants and restore natural water flow.
+- 📰 **News**: Stay updated with the latest news related to environmental conservation, sustainability, and innovations.
+- 💰 **Donate**: Support environmental causes by donating to verified projects and organizations.
+- 🤝 **Join Initiatives**: Get involved in various environmental initiatives and become part of a community dedicated to making a difference.
+- 🌳 **Plantation**: Participate in tree-planting activities to help reforest and green our planet.
+- 🚜 **Farming**: Learn and apply sustainable farming techniques to promote organic and eco-friendly agriculture.
+- 💡 **Startup Ideas**: Discover and develop startup ideas focused on solving environmental challenges.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/123ramashish/samasya-samadhan.git
+    ```
+2. **Navigate to the project directory**:
+    ```bash
+    cd samasya-samadhan
+    ```
+3. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+4. **Set up environment variables**:
+    - Create a `.env` file in the root directory.
+    - Add the necessary environment variables as specified in `.env.example`.
+
+5. **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+
+## Usage
+
+Once the server is running, you can:
+
+- **Explore the platform**: Browse various environmental initiatives and join efforts in your community.
+- **Stay Informed**: Read the latest news on environmental issues and solutions.
+- **Contribute**: Donate to causes you care about or start your own cleanup project.
+- **Collaborate**: Connect with others who share your passion for the environment and work together on impactful projects.
+
+## Contributing
+
+We welcome contributions from the community! Here's how you can help:
+
+1. **Fork the repository** on GitHub.
+2. **Create a new branch** with a descriptive name:
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+3. **Make your changes** and commit them with clear, concise messages.
+4. **Push to your branch**:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+5. **Submit a pull request** with a detailed description of your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Contact
+
+For any inquiries, please contact:
+
+- **Ram Ashish Rathore**  
+  Email: [ramashish62127@gmail.com]  
+  GitHub: [@123ramashish](https://github.com/123ramashish)
+
+Let's work together to solve environmental challenges and make the world a better place! 🌎
