@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useValidation from "../Custom_Hooks/useValidation";
 import { Alert, Label } from "flowbite-react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +20,7 @@ const initialState = {
 
 export default function SignUp() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [error, setError] = useState(null);
   const { errors, setErrors, formData, setFormData, validateForm } =
     useValidation(initialState);
@@ -44,6 +45,7 @@ export default function SignUp() {
     // Handle successful signup
     console.log("Signup successful!");
     // navigate to a different page (e.g., navigate("/home"))
+    navigate("/signin");
     alert("Signup successful!");
   };
 

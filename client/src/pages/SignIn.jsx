@@ -73,10 +73,10 @@ export default function SignIn() {
               onChange={(e) => handleChange(e, "password")}
             />
           </div>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <Checkbox id="remember" />
             <Label htmlFor="remember">Remember me</Label>
-          </div>
+          </div> */}
           <button
             type="submit"
             className="hover:bg-emerald-600 bg-green-400 text-white text-xl p-2 rounded-md border-none shadow-md"
