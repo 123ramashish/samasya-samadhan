@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import useValidation from "../Custom_Hooks/useValidation";
-import { Label } from "flowbite-react";
+import { Alert, Label } from "flowbite-react";
+import { useDispatch, useSelector } from "react-redux";
+import { HiInformationCircle } from "react-icons/hi";
+
+import {
+  signUpStart,
+  signUpSuccess,
+  signUpFailure,
+} from "../redux/user/userSlice.js";
+import { useState } from "react";
 
 const initialState = {
   name: "",
@@ -10,6 +19,8 @@ const initialState = {
 };
 
 export default function SignUp() {
+  const dispatch = useDispatch();
+  const [error, setError] = useState(null);
   const { errors, setErrors, formData, setFormData, validateForm } =
     useValidation(initialState);
 
@@ -23,12 +34,17 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = validateForm(formData);
-    setErrors(validationErrors);
-    if (Object.keys(validationErrors).length === 0) {
-      console.log("Form data:", formData);
-      alert("Form submitted successfully! Check the console for the data.");
-    }
+    console.log(formData);
+    setError(null); // Clear previous error messages
+
+    if (!validateForm(formData)) return; // Early return if validation fails
+
+    dispatch(signUpSuccess(formData));
+
+    // Handle successful signup
+    console.log("Signup successful!");
+    // navigate to a different page (e.g., navigate("/home"))
+    alert("Signup successful!");
   };
 
   return (
@@ -39,6 +55,7 @@ export default function SignUp() {
             Registration <span className="text-green-400">Form</span>
           </h1>
           <form
+            type="submit"
             onSubmit={handleSubmit}
             className="flex flex-col flex-wrap gap-4 mt-4"
           >
@@ -129,10 +146,16 @@ export default function SignUp() {
 
             <button
               type="submit"
+              onSubmit={handleSubmit}
               className="hover:bg-emerald-600 bg-green-400 text-white text-xl p-2 rounded-md border-none shadow-md"
             >
               Submit
             </button>
+            {error && (
+              <Alert color="failure" icon={HiInformationCircle}>
+                {error}
+              </Alert>
+            )}
             <p className="font-thin text-sm">
               Have an account?{" "}
               <Link

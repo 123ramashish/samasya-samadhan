@@ -1,35 +1,52 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-
+import { useSelector } from "react-redux";
 import logo from "../../public/logo.gif";
+import { Link } from "react-router-dom";
 export default function Header() {
+  const { currentUser, oldUser } = useSelector((state) => state.user);
+
+  console.log(currentUser, oldUser);
   return (
     <Navbar fluid rounded className="fixed w-full z-40  shadow-md mb-4">
       <Navbar.Brand href="./">
         <img src={logo} className="m-5 h-10 sm:h-9 rounded-full" alt="" />
       </Navbar.Brand>
       <div className="flex md:order-2 px-4">
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            <Avatar
-              alt="User settings"
-              img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-              rounded
-            />
-          }
-        >
-          <Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
-            <span className="block truncate text-sm font-medium">
-              name@flowbite.com
-            </span>
-          </Dropdown.Header>
-          <Dropdown.Item>Profile</Dropdown.Item>
+        {currentUser ? (
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+              <Avatar
+                alt="User settings"
+                img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                rounded
+              />
+            }
+          >
+            <Dropdown.Header>
+              <span className="block text-sm"></span>
+              <span className="block truncate text-sm font-medium">
+                {currentUser.email}
+              </span>
+            </Dropdown.Header>
+            <Link to={"/donate"}>
+              <Dropdown.Item>Profile</Dropdown.Item>
+            </Link>
 
-          <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
-        </Dropdown>
+            <Dropdown.Divider />
+            <Link to={"/signout"}>
+              <Dropdown.Item>Sign out</Dropdown.Item>
+            </Link>
+          </Dropdown>
+        ) : (
+          <a
+            href="/signin"
+            className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"
+          >
+            Signin
+          </a>
+        )}
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
@@ -42,11 +59,7 @@ export default function Header() {
             Home
           </Navbar.Link>
         </div>
-        <div className="hover:bg-gray-200 rounded-lg px-2 active:text-green-400 hover:text-green-400">
-          <Navbar.Link href="/about" className="  text-lg">
-            About
-          </Navbar.Link>
-        </div>
+
         <div className="hover:bg-gray-200 rounded-lg px-2">
           <Navbar.Link className="hover:text-green-400  text-lg">
             <Dropdown label="Features" inline className="">
@@ -65,11 +78,7 @@ export default function Header() {
             </Dropdown>
           </Navbar.Link>
         </div>
-        <div className="hover:bg-gray-200 rounded-lg px-2">
-          <Navbar.Link href="/donate" className="hover:text-green-400  text-lg">
-            Donate
-          </Navbar.Link>
-        </div>
+
         <div className="hover:bg-gray-200 rounded-lg px-2">
           <Navbar.Link className="hover:text-green-400  text-lg">
             <Dropdown label="Join" inline className="">
@@ -89,11 +98,21 @@ export default function Header() {
           </Navbar.Link>
         </div>
         <div className="hover:bg-gray-200 rounded-lg px-2">
+          <Navbar.Link href="/donate" className="hover:text-green-400  text-lg">
+            Donate
+          </Navbar.Link>
+        </div>
+        <div className="hover:bg-gray-200 rounded-lg px-2">
           <Navbar.Link
             href="/contact"
             className="hover:text-green-400  text-lg"
           >
-            Contact
+            Contact-Us
+          </Navbar.Link>
+        </div>
+        <div className="hover:bg-gray-200 rounded-lg px-2 active:text-green-400 hover:text-green-400">
+          <Navbar.Link href="/about" className="  text-lg">
+            About-Us
           </Navbar.Link>
         </div>
       </Navbar.Collapse>

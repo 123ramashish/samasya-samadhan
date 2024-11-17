@@ -137,9 +137,12 @@ export default function PlantPage() {
                 <p>User1</p>
               </div>
             </div>
-            <button className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full">
+            <a
+              href="/join-team"
+              className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"
+            >
               Join
-            </button>
+            </a>
           </div>
           <p className="font-normal text-green-500 dark:text-gray-400">
             Award winner
@@ -168,9 +171,12 @@ export default function PlantPage() {
                 <p>User1</p>
               </div>
             </div>
-            <button className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full">
+            <a
+              href="/join-team"
+              className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"
+            >
               Join
-            </button>
+            </a>
           </div>
           <p className="font-normal text-green-300 dark:text-gray-400">
             Upcoming Award winner
@@ -199,9 +205,12 @@ export default function PlantPage() {
                 <p>User1</p>
               </div>
             </div>
-            <button className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full">
+            <a
+              href="/join-team"
+              className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"
+            >
               Join
-            </button>
+            </a>
           </div>
           <p className="font-normal text-green-500 dark:text-gray-400">
             Award winner

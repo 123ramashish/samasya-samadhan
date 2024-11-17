@@ -1,14 +1,9 @@
 import { Footer } from "flowbite-react";
-import {
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
+import { BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
 import logo from "../../public/logo.gif";
 export default function FooterPage() {
   return (
-    <Footer container className="bg-green-100 ">
+    <Footer container className="bg-green-100 mt-2">
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div className="flex items-center">

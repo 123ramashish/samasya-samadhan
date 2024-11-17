@@ -15,10 +15,6 @@ const __dirname = path.dirname(__filename);
 const app = express();
 // Applying Cors
 
-app.use(express.static(path.join(__dirname, "/client/dist")));
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/client/dist/index.html"))
-);
 app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,6 +37,10 @@ app.use((err, req, res, next) => {
   return res.status(500).send("Something is wrong!");
 });
 
+app.use(express.static(path.join(__dirname, "/client/dist")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/client/dist/index.html"))
+);
 app.listen(process.env.PORT, () => {
   console.log(`Listening ON port ${process.env.PORT}`);
   connectDB();
